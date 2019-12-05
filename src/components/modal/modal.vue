@@ -376,7 +376,9 @@
                     this.buttonLoading = false;
                     this.timer = setTimeout(() => {
                         this.wrapShow = false;
-                        this.removeScrollEffect();
+                        if (!this.scrollable) {
+                            this.removeScrollEffect();
+                        }
                     }, 300);
                 } else {
                     this.modalIndex = this.handleGetModalIndex();
